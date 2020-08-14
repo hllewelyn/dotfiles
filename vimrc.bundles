@@ -1,0 +1,24 @@
+call plug#begin('~/.vim/bundles')
+
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ervandew/supertab'
+Plug 'godlygeek/tabular'
+Plug 'mileszs/ack.vim'
+Plug 'pbrisbin/vim-mkdir'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-surround'
+Plug 'vim-ruby/vim-ruby'
+Plug 'vim-scripts/tComment'
+Plug 'dense-analysis/ale'
+Plug 'sonph/onehalf', { 'rtp': 'vim/' }
+
+call plug#end()
