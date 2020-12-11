@@ -2,6 +2,12 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.nodenv/shims:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
+export ANDROID_HOME=${HOME}/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
+export VISUAL=vim
+export EDITOR=$VISUAL
 
 function wip() {
   git commit -m "WIP: $1"
