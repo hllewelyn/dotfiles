@@ -35,3 +35,5 @@ fi
 source $HOME/.zsh/aliases
 
 PROMPT='%2~ # '
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
