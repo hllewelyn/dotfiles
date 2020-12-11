@@ -5,6 +5,7 @@
 .byebug_history
 .env
 .git/
+.solargraph.yml
 /log
 /node_modules/
 /tmp

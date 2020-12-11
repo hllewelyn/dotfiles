@@ -20,5 +20,6 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/tComment'
 Plug 'dense-analysis/ale'
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
