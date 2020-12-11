@@ -30,3 +30,5 @@
 [user]
   name = Harry Llewelyn
   email = harry@hey.com
+[pull]
+	rebase = false
