@@ -13,6 +13,16 @@ function wip() {
   git commit -m "WIP: $1"
 }
 
+function lmk() {
+  if [ $? -eq 0 ]; then
+    osascript -e 'display notification "👍🏻" with title "Success"'
+    say "Success"
+  else
+    osascript -e 'display notification "👎🏻" with title "Failed"'
+    say "Failure"
+  fi
+}
+
 # Silence direnv
 export DIRENV_LOG_FORMAT=
 
