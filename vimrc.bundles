@@ -17,6 +17,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
+Plug 'vim-test/vim-test'
 Plug 'vim-scripts/tComment'
 Plug 'dense-analysis/ale'
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }

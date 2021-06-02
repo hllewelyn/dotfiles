@@ -37,6 +37,15 @@ map <Leader>tt :tabnew<cr>
 map <Leader>tn :tabnext<cr>
 map <Leader>tp :tabprevious<cr>
 
+" Test mappings
+nnoremap <silent> <Leader>t :TestFile<CR>
+nnoremap <silent> <Leader>s :TestNearest<CR>
+nnoremap <silent> <Leader>l :TestLast<CR>
+nnoremap <silent> <Leader>a :TestSuite<CR>
+nnoremap <silent> <Leader>gt :TestVisit<CR>
+tmap <C-o> <C-\><C-n>
+let test#strategy = "neovim"
+
 " Ack mappings
 " bind K to grep word under cursor
 nnoremap K :Ack "<C-R><C-W>"<CR>
