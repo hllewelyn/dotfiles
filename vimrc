@@ -55,11 +55,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Tab mappings
-map <Leader>tt :tabnew<cr>
-map <Leader>tn :tabnext<cr>
-map <Leader>tp :tabprevious<cr>
-
 syntax on
 set textwidth=110	" set to rubocop length
 
