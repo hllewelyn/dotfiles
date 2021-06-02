@@ -66,11 +66,16 @@ set textwidth=110	" set to rubocop length
 " Set specific linters
 let g:ale_linters = {
       \ 'javascript': ['eslint'],
-      \ 'ruby': ['rubocop'],
+      \ 'ruby': ['standardrb'],
       \}
 
 " Only run linters named in ale_linters settings.
 let g:ale_linters_explicit = 1
+
+let g:ale_fixers = {'ruby': ['standardrb']}
+let g:ale_fix_on_save = 1
+
+let g:ruby_indent_assignment_style = 'variable'
 
 " The Silver Searcher
 if executable('ag')
