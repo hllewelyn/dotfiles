@@ -65,6 +65,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" Turn mouse on
+set mouse=a
+
 syntax on
 set textwidth=110	" set to rubocop length
 
