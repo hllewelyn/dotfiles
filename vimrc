@@ -26,6 +26,10 @@ set expandtab		" spaces instead of tabs
 
 syntax enable
 
+" Folding
+set foldlevel=1
+set foldmethod=syntax
+
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
