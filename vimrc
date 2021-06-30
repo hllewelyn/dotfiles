@@ -8,6 +8,7 @@ endif
 
 set ruler		" show the cursor position all the time
 set number		" show line numbers
+set relativenumber      " show relative line numbers
 set numberwidth=5	" width of the number gutter
 set noshowmode		" hide --INSERT-- in cmdline
 set hls			" highlight search results
