@@ -57,6 +57,8 @@ add-zsh-hook precmd vcs_info
 # e.g. here we add the Git information in green
 PROMPT='%1~ %F{green}${vcs_info_msg_0_}%f %# '
 
+setopt autocd # Make CD unnecessary
+
 # Enable checking for (un)staged changes, enabling use of %u and %c
 zstyle ':vcs_info:*' check-for-changes true
 # Set custom strings for an unstaged vcs repo changes (*) and staged changes (+)
