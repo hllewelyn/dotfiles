@@ -42,6 +42,8 @@ fi
 # aliases
 source $HOME/.zsh/aliases
 
+bindkey -v # set to vi bindings
+
 PROMPT='%2~ # '
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
