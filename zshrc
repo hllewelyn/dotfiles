@@ -43,6 +43,8 @@ fi
 source $HOME/.zsh/aliases
 
 bindkey -v # set to vi bindings
+bindkey '^r' history-incremental-pattern-search-backward # replace built-in bindings
+bindkey '^s' history-incremental-pattern-search-forward # replace built-in bindings
 
 PROMPT='%2~ # '
 
