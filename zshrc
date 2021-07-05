@@ -46,7 +46,6 @@ bindkey -v # set to vi bindings
 
 PROMPT='%2~ # '
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/opt/homebrew/opt/postgresql@10/bin:$PATH"
 
 # Autoload zsh add-zsh-hook and vcs_info functions (-U autoload w/o substition, -z use zsh style)
