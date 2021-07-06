@@ -106,4 +106,15 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 
-endif 
+endif
+
+fun! TrimWhitespace()
+  let l:save = winsaveview()
+  keeppatterns %s/\s\+$//e
+  call winrestview(l:save)
+endfun
+
+augroup MISC
+  autocmd!
+  autocmd BufWritePre * :call TrimWhitespace()
+augroup END
