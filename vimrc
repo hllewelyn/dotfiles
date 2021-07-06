@@ -24,6 +24,7 @@ set shiftwidth=2
 set smarttab
 set expandtab		" spaces instead of tabs
 set scrolloff=3         " start scrolling 5 lines before edge of viewport
+set colorcolumn=120     " set a column at 120 characters
 
 syntax enable
 
