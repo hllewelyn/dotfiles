@@ -23,6 +23,7 @@ set autoindent		" always have automatic indenting on
 set shiftwidth=2
 set smarttab
 set expandtab		" spaces instead of tabs
+set scrolloff=3         " start scrolling 5 lines before edge of viewport
 
 syntax enable
 
