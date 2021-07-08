@@ -6,6 +6,7 @@ if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
+set autoread            " automatically reload if file changes outside of vim
 set ruler		" show the cursor position all the time
 set number		" show line numbers
 set relativenumber      " show relative line numbers
