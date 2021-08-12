@@ -1,5 +1,3 @@
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.nodenv/shims:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export PATH="/opt/homebrew/opt/heroku-node/bin:$PATH"
@@ -24,7 +22,6 @@ function lmk() {
 # Silence direnv
 export DIRENV_LOG_FORMAT=
 
-eval "$(rbenv init -)"
 eval "$(direnv hook zsh)"
 
 # load custom executable functions
@@ -70,3 +67,5 @@ zstyle ':vcs_info:*' stagedstr ' +'
 # Set the format of the Git information for vcs_info
 zstyle ':vcs_info:git:*' formats       '(%b%u%c)'
 zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
+
+. /opt/homebrew/opt/asdf/asdf.sh
