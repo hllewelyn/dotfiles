@@ -41,6 +41,10 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 colorscheme onehalflight
 
+" Shortcut commands to change the colorscheme - mainly used for pairing
+command! DD execute "colorscheme onehalfdark"
+command! DL execute "colorscheme onehalflight"
+
 map <Leader>so :so ~/.vimrc<cr> " reload vimrc with so
 
 " Tab mappings
