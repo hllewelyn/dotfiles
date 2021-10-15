@@ -4,6 +4,7 @@ export PATH="/opt/homebrew/opt/heroku-node/bin:$PATH"
 
 export VISUAL=vim
 export EDITOR=$VISUAL
+export BAT_THEME="OneHalfLight"
 
 function wip() {
   git commit -m "WIP: $1"
