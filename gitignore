@@ -14,10 +14,3 @@ db/*.sqlite3
 log/*.log
 tags
 tmp/**/*
-
-.rpw_info
-video
-quiz
-lab
-text
-cgrp
