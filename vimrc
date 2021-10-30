@@ -100,20 +100,6 @@ let g:ale_fix_on_save = 1
 
 let g:ruby_indent_assignment_style = 'variable'
 
-" The Silver Searcher
-if executable('ag')
-
-  let g:ackprg = 'ag -Q --vimgrep'
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  " let g:ctrlp_user_command = 'ag %s -Q --follow -l --nocolor -g ""'
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-
-endif
-
 fun! TrimWhitespace()
   let l:save = winsaveview()
   keeppatterns %s/\s\+$//e

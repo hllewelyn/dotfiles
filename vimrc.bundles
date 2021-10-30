@@ -1,6 +1,5 @@
 call plug#begin('~/.vim/bundles')
 
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'mileszs/ack.vim'
