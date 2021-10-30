@@ -26,6 +26,7 @@ set smarttab
 set expandtab		" spaces instead of tabs
 set scrolloff=3         " start scrolling 5 lines before edge of viewport
 set clipboard+=unnamedplus
+set mouse=a
 
 " Change the color of the editor after 120 chars, except for the quickfix panel.
 let &colorcolumn=join(range(121,999),",")
@@ -69,20 +70,11 @@ nnoremap <leader>fk <cmd>Telescope grep_string<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-" Say no to arrow keys
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
 " Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-
-" Turn mouse on
-set mouse=a
 
 syntax on
 set textwidth=110	" set to rubocop length
