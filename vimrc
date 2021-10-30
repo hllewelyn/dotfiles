@@ -61,11 +61,12 @@ nnoremap <silent> <Leader>gt :TestVisit<CR>
 tmap <C-o> <C-\><C-n>
 let test#strategy = "neovim"
 
-" Ack mappings
-" bind K to grep word under cursor
-nnoremap K :Ack "<C-R><C-W>"<CR>
-" bind K to grep selection
-vnoremap K y:Ack "<C-r>""<CR>
+" Telescope mappings
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fk <cmd>Telescope grep_string<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Say no to arrow keys
 nnoremap <Left> :echoe "Use h"<CR>
