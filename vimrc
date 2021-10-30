@@ -25,6 +25,7 @@ set shiftwidth=2
 set smarttab
 set expandtab		" spaces instead of tabs
 set scrolloff=3         " start scrolling 5 lines before edge of viewport
+set clipboard+=unnamedplus
 
 " Change the color of the editor after 120 chars, except for the quickfix panel.
 let &colorcolumn=join(range(121,999),",")
