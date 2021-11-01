@@ -78,6 +78,8 @@ nnoremap <C-l> <C-w>l
 
 " Misc mappings
 nnoremap Y y$
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
 syntax on
 set textwidth=110	" set to rubocop length
