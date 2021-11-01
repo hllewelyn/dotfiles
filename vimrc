@@ -80,6 +80,7 @@ nnoremap <C-l> <C-w>l
 nnoremap Y y$
 nnoremap n nzzzv
 nnoremap N Nzzzv
+nnoremap J mzJ`z
 
 syntax on
 set textwidth=110	" set to rubocop length
