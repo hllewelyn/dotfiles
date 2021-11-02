@@ -24,6 +24,7 @@ alias sites="cd ~/Sites"
 alias sr="spring rspec "
 alias tmux-conf="vim ~/.tmux.conf"
 alias tma="tmux a -t"
+alias ui='tmuxinator start podia-ui'
 alias v="nvim"
 alias vim="nvim"
 alias vimrc="vim ~/.vimrc"
