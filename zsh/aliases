@@ -29,6 +29,4 @@ alias ui='tmuxinator start podia-ui'
 alias v="nvim"
 alias vim="nvim"
 alias vimrc="vim ~/.vimrc"
-alias ytb="tmuxinator start ytb"
-alias ytbm="tmuxinator start ytbm"
 alias zshrc="vim ~/.zshrc"
