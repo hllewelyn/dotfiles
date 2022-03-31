@@ -1,9 +1,17 @@
-export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/.bin:$PATH"
-export PATH="/opt/homebrew/opt/heroku-node/bin:$PATH"
+source ~/dotfiles/env
+VIM="nvim"
 
-export VISUAL=vim
-export EDITOR=$VISUAL
+export GOPATH=$HOME/go
+
+addToPathFront "/usr/local/bin"
+addToPathFront "$HOME/.bin"
+addToPathFront "/opt/homebrew/opt/heroku-node/bin"
+addToPathFront "$PATH:$GOPATH/bin"
+
+export GOPRIVATE="github.com/hllewelyn/*"
+
+export EDITOR=$VIM
+export GIT_EDITOR=$VISUAL
 export BAT_THEME="OneHalfLight"
 
 function wip() {
@@ -24,11 +32,6 @@ function lmk() {
 export DIRENV_LOG_FORMAT=
 
 eval "$(direnv hook zsh)"
-
-# load custom executable functions
-# for function in ~/.zsh/functions/*; do
-#   source $function
-# done
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
@@ -69,4 +72,5 @@ zstyle ':vcs_info:*' stagedstr ' +'
 zstyle ':vcs_info:git:*' formats       '(%b%u%c)'
 zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
 
-. /opt/homebrew/opt/asdf/asdf.sh
+# . /opt/homebrew/opt/asdf/asdf.sh
+. $HOME/.asdf/asdf.sh
