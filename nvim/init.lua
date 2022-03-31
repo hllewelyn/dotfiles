@@ -140,3 +140,14 @@ vim.keymap.set('n', 'n', 'nzzzv', { noremap = true })
 vim.keymap.set('n', 'N', 'Nzzzv', { noremap = true })
 vim.keymap.set('n', 'J', 'mzJ`z', { noremap = true })
 
+local group = vim.api.nvim_create_augroup("Misc", { clear = true })
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  desc = "Trim whitespace for buffer on write",
+  callback = function()
+    local save = vim.fn.winsaveview()
+    vim.cmd [[ keeppatterns %s/\s\+$//e ]]
+    vim.fn.winrestview(save)
+  end,
+  group = group
+})
