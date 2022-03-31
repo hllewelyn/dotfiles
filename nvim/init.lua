@@ -1,50 +1,7 @@
 vim.g.mapleader = " "
 
-local Plug = vim.fn['plug#']
-vim.call('plug#begin', '~/.vim/plugged')
+require("harry")
 
-Plug 'ervandew/supertab'
-Plug 'pbrisbin/vim-mkdir'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rhubarb'
-Plug 'tpope/vim-surround'
-Plug 'vim-ruby/vim-ruby'
-Plug 'vim-test/vim-test'
-Plug 'dense-analysis/ale'
-Plug('sonph/onehalf', { rtp = 'vim/' })
-Plug('fatih/vim-go', { ['do'] = ':GoUpdateBinaries' })
-
-Plug 'mattn/emmet-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'styled-components/vim-styled-components'
-
--- Treesitter
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'sharkdp/fd'
-Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate' })  -- We recommend updating the parsers on update
-
--- LSP
-Plug 'neovim/nvim-lspconfig'
--- Plug 'hrsh7th/cmp-nvim-lsp'
--- Plug 'hrsh7th/cmp-buffer'
--- Plug 'hrsh7th/cmp-path'
--- Plug 'hrsh7th/cmp-cmdline'
--- Plug 'hrsh7th/nvim-cmp'
-
-vim.call('plug#end')
-
--- require'lspconfig'.solargraph.setup{}
 vim.opt.compatible = false
 vim.opt.autoread = true            -- automatically reload if file changes outside of vim
 vim.opt.ruler = true		-- show the cursor position all the time
@@ -119,14 +76,6 @@ vim.keymap.set('n', '<Leader>gt', ':TestVisit<cr>')
 vim.keymap.set('t', '<C-o>', '<C-\\><C-n>')
 vim.g['test#strategy'] = "neovim"
 
--- Telescope mappings
-vim.keymap.set('n', '<Leader>ff', '<cmd>Telescope find_files<cr>', { noremap = true })
-vim.keymap.set('n', '<Leader>fg', '<cmd>Telescope live_grep<cr>', { noremap = true })
-vim.keymap.set('n', '<Leader>fk', '<cmd>Telescope grep_string<cr>', { noremap = true })
-vim.keymap.set('n', '<Leader>fb', '<cmd>Telescope buffers<cr>', { noremap = true })
-vim.keymap.set('n', '<Leader>fh', '<cmd>Telescope help_tags<cr>', { noremap = true })
-vim.keymap.set('n', '<Leader>fo', '<cmd>Telescope oldfiles<cr>', { noremap = true })
-
 -- Quicker window movement
 vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true })
@@ -150,3 +99,9 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
   group = group
 })
+
+-- Setup lspconfig.
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+require('lspconfig')['solargraph'].setup {
+  capabilities = capabilities
+}
