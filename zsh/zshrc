@@ -11,7 +11,7 @@ addToPathFront "$PATH:$GOPATH/bin"
 export GOPRIVATE="github.com/hllewelyn/*"
 
 export EDITOR=$VIM
-export GIT_EDITOR=$VISUAL
+export GIT_EDITOR=$VIM
 export BAT_THEME="OneHalfLight"
 
 function wip() {
