@@ -5,10 +5,12 @@
 [alias]
   aa = add --all
   ap = add --patch
-  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
+  branches = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:green)%(color:bold)%(refname:short)\" refs/remotes
   ci = commit -v
   co = checkout
+  del = branch -D
   l = log --oneline
+  p = pull
   st = status
 [core]
   excludesfile = ~/.gitignore
@@ -18,6 +20,7 @@
   ff = only
 [commit]
   template = ~/.gitmessage
+	verbose = true
 [fetch]
   prune = true
 [help]

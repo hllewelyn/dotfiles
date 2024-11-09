@@ -26,7 +26,7 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
-    { name = 'buffer' },
+    { name = 'buffer', keyword_length = 5 },
     { name = 'path' },
   }),
   formatting = {

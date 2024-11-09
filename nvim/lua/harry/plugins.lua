@@ -3,7 +3,6 @@ vim.call('plug#begin', '~/.vim/plugged')
 
 Plug 'pbrisbin/vim-mkdir'
 Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
@@ -14,11 +13,11 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
--- Plug 'vim-ruby/vim-ruby'
--- Plug 'vim-test/vim-test'
--- Plug 'dense-analysis/ale'
+Plug 'vim-ruby/vim-ruby'
+Plug 'vim-test/vim-test'
+Plug 'dense-analysis/ale'
 Plug('sonph/onehalf', { rtp = 'vim/' })
--- Plug('fatih/vim-go', { ['do'] = ':GoUpdateBinaries' })
+Plug 'projekt0n/github-nvim-theme'
 
 -- Plug 'mattn/emmet-vim'
 -- Plug 'pangloss/vim-javascript'
@@ -30,6 +29,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'sharkdp/fd'
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate' })  -- We recommend updating the parsers on update
+Plug 'nvim-treesitter/nvim-treesitter-context'
 
 -- LSP
 Plug 'neovim/nvim-lspconfig'
@@ -45,6 +45,3 @@ Plug 'williamboman/nvim-lsp-installer'
 -- Plug 'L3MON4D3/LuaSnip'
 
 vim.call('plug#end')
-
-
-

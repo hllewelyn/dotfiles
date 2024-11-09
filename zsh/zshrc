@@ -1,32 +1,22 @@
 source ~/dotfiles/env
-VIM="nvim"
 
 export GOPATH=$HOME/go
-
-addToPathFront "/usr/local/bin"
-addToPathFront "$HOME/.bin"
-addToPathFront "/opt/homebrew/opt/heroku-node/bin"
-addToPathFront "$PATH:$GOPATH/bin"
-
 export GOPRIVATE="github.com/hllewelyn/*"
 
-export EDITOR=$VIM
-export GIT_EDITOR=$VIM
-export BAT_THEME="OneHalfLight"
+if type nvim &> /dev/null; then
+  alias v="vim"
+  alias vim="nvim"
+  export EDITOR="nvim"
+  export PSQL_EDITOR="nvim -c"set filetype=sql""
+  export GIT_EDITOR="nvim"
+else
+  export EDITOR="vim"
+  export PSQL_EDITOR="vim -c"set filetype=sql""
+  export GIT_EDITOR="vim"
+fi
 
-function wip() {
-  git commit -m "WIP: $1"
-}
-
-function lmk() {
-  if [ $? -eq 0 ]; then
-    osascript -e 'display notification "👍🏻" with title "Success"'
-    say "Success"
-  else
-    osascript -e 'display notification "👎🏻" with title "Failed"'
-    say "Failure"
-  fi
-}
+export RUBY_YJIT_ENABLE=1
+export DISABLE_SPRING=true
 
 # Silence direnv
 export DIRENV_LOG_FORMAT=
@@ -44,12 +34,26 @@ fi
 source $HOME/.zsh/aliases
 
 bindkey -v # set to vi bindings
-bindkey '^r' history-incremental-pattern-search-backward # replace built-in bindings
-bindkey '^s' history-incremental-pattern-search-forward # replace built-in bindings
+#
+# CTRL-R to search through history
+bindkey '^R' history-incremental-search-backward
+# CTRL-S to search forward in history
+bindkey '^S' history-incremental-search-forward
+# Accept the presented search result
+bindkey '^Y' accept-search
 
-PROMPT='%2~ # '
+# Use the arrow keys to search forward/backward through the history,
+# using the first word of what's typed in as search word
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
 
-export PATH="/opt/homebrew/opt/postgresql@10/bin:$PATH"
+# Use the same keys as bash for history forward/backward: Ctrl+N/Ctrl+P
+bindkey '^P' history-search-backward
+bindkey '^N' history-search-forward
+
+# Backspace working the way it should
+bindkey '^?' backward-delete-char
+bindkey '^[[3~' delete-char
 
 # Autoload zsh add-zsh-hook and vcs_info functions (-U autoload w/o substition, -z use zsh style)
 autoload -Uz add-zsh-hook vcs_info
@@ -72,5 +76,48 @@ zstyle ':vcs_info:*' stagedstr ' +'
 zstyle ':vcs_info:git:*' formats       '(%b%u%c)'
 zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
 
+###############
+## Functions
+###############
+
+function wip() {
+  git commit -m "WIP: $1"
+}
+
+start_postgres() {
+  if pg_ctl status >/dev/null 2>&1; then
+    echo "PostgreSQL is already running"
+  else
+    pg_ctl start
+  fi
+}
+
+stop_postgres() {
+  if pg_ctl status >/dev/null 2>&1; then
+    pg_ctl stop
+  else
+    echo "PostgreSQL is not running"
+  fi
+}
+
+start_redis() {
+  if pgrep redis-server >/dev/null; then
+    echo "Redis is already running"
+  else
+    redis-server &
+  fi
+}
+
+# [f]uzzy check[o]ut
+fo() {
+  git branch --sort=-committerdate --format='%(refname:short)' | fzf --header 'git checkout' | xargs git checkout
+}
+# [p]ull request check[o]ut
+po() {
+  gh pr list --author "@me" | fzf --header 'checkout PR' | awk '{print $(NF-5)}' | xargs git checkout
+}
+
 # . /opt/homebrew/opt/asdf/asdf.sh
 . $HOME/.asdf/asdf.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

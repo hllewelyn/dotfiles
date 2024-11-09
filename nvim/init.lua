@@ -9,7 +9,8 @@ vim.opt.number = true		-- show line numbers
 vim.opt.relativenumber = true      -- show relative line numbers
 vim.opt.numberwidth=5	-- width of the number gutter
 vim.opt.showmode = false		-- hide --INSERT-- in cmdline
-vim.opt.hls = true			-- highlight search results
+vim.opt.hlsearch = true			-- highlight search results
+vim.opt.incsearch = true                -- incremental search
 vim.opt.splitbelow = true 		-- open horizontal splits below
 vim.opt.splitright = true		-- open vertical splits to the right
 vim.opt.backspace = "indent,eol,start" -- backspace over everything in insert
@@ -26,6 +27,7 @@ vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 vim.opt.mouse = 'a'
 vim.opt.foldlevel = 1
 vim.opt.foldmethod = 'syntax'
+
 vim.opt.termguicolors = true
 vim.opt.textwidth=110
 
@@ -35,17 +37,34 @@ vim.g.netrw_banner = 0
 vim.g.netrw_localcopydircmr = 'cp -r'
 
 -- Ale
-vim.g.ale_linters = {ruby = 'standardrb', javascript = 'eslint'}
+vim.g.ale_sign_column_always = 1
+vim.g.ale_linters = {
+  ruby = 'standardrb',
+  javascript = 'eslint',
+  ['javascript.jsx'] = 'eslint'
+}
 vim.g.ale_linters_explicit  = 1
-vim.g.ale_fixers = {ruby = 'standardrb', javascript = 'prettier'}
+vim.g.ale_fixers = {
+  ruby = 'standardrb',
+  javascript = 'prettier',
+  ['javascript.jsx'] = 'prettier'
+}
 vim.g.ale_fix_on_save = 1
 
 -- Ruby Vim
 vim.g.ruby_indent_assignment_style = 'variable'
 
 -- Themeing
-vim.cmd('colorscheme onehalflight')
+require('github-theme').setup({
+  options = {
+    hide_nc_statusline = false,
+  }
+})
+
+-- vim.cmd('colorscheme onehalflight')
+vim.cmd('colorscheme github_dark')
 vim.cmd('syntax enable')
+
 vim.cmd [[
   " Change the color of the editor after 120 chars, except for the quickfix panel.
   let &colorcolumn=join(range(121,999),",")
@@ -55,7 +74,7 @@ vim.cmd [[
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
   " Shortcut commands to change the colorscheme - mainly used for pairing
-  command! DD execute "colorscheme onehalfdark"
+  command! DD execute "colorscheme github_dark"
   command! DL execute "colorscheme onehalflight"
 ]]
 
@@ -87,6 +106,14 @@ vim.keymap.set('n', 'Y', 'y$', { noremap = true })
 vim.keymap.set('n', 'n', 'nzzzv', { noremap = true })
 vim.keymap.set('n', 'N', 'Nzzzv', { noremap = true })
 vim.keymap.set('n', 'J', 'mzJ`z', { noremap = true })
+vim.keymap.set("x", "<leader>p", [["_dP]])
+
+-- Lazygit
+vim.keymap.set('n', 'lg', ':tabnew term://lazygit<cr>', { noremap = true })
+
+-- Move highlighted rows
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 local group = vim.api.nvim_create_augroup("Misc", { clear = true })
 
