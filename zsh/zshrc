@@ -63,7 +63,13 @@ setopt prompt_subst
 add-zsh-hook precmd vcs_info
 # add ${vcs_info_msg_0} to the prompt
 # e.g. here we add the Git information in green
-PROMPT='%1~ %F{green}${vcs_info_msg_0_}%f %# '
+# PROMPT='%1~ %F{green}${vcs_info_msg_0_}%f %# '
+
+if [[ -n $SSH_CONNECTION ]]; then
+  PROMPT='%m %1~ %F{green}${vcs_info_msg_0_}%f %# '
+else
+  PROMPT='%1~ %F{green}${vcs_info_msg_0_}%f %# '
+fi
 
 setopt autocd # Make CD unnecessary
 
