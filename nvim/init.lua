@@ -54,30 +54,6 @@ vim.g.ale_fix_on_save = 1
 -- Ruby Vim
 vim.g.ruby_indent_assignment_style = 'variable'
 
--- Themeing
-require('github-theme').setup({
-  options = {
-    hide_nc_statusline = false,
-  }
-})
-
--- vim.cmd('colorscheme onehalflight')
-vim.cmd('colorscheme github_dark')
-vim.cmd('syntax enable')
-
-vim.cmd [[
-  " Change the color of the editor after 120 chars, except for the quickfix panel.
-  let &colorcolumn=join(range(121,999),",")
-  au FileType qf setlocal nonumber colorcolumn=
-
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
-  " Shortcut commands to change the colorscheme - mainly used for pairing
-  command! DD execute "colorscheme github_dark"
-  command! DL execute "colorscheme onehalflight"
-]]
-
 vim.keymap.set('', '<Leader>so', ':so ~/.config/nvim/init.lua<cr>') -- Reload nvim config
 
 -- Tab mappings

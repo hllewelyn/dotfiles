@@ -1,4 +1,5 @@
 require("harry.plugins")
+require("harry.theme")
 require("harry.telescope")
 require("harry.completion")
 require("harry.lsp")

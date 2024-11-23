@@ -16,6 +16,10 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-test/vim-test'
 Plug 'dense-analysis/ale'
+
+
+-- Themeing
+Plug 'f-person/auto-dark-mode.nvim'
 Plug('sonph/onehalf', { rtp = 'vim/' })
 Plug 'projekt0n/github-nvim-theme'
 
