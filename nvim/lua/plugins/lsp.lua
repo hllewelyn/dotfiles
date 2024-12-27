@@ -15,7 +15,12 @@ return {
       },
     },
     config = function()
-      require 'lspconfig'.lua_ls.setup {
+      local lspconfig = require 'lspconfig'
+
+      lspconfig.lua_ls.setup {}
+      lspconfig.ruby_lsp.setup {
+        formatter = 'standard',
+        linters = { 'standard' },
       }
     end,
   }
