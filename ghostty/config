@@ -1,8 +1,8 @@
 fullscreen = true
 
 font-family = BerkeleyMono Nerd Font Mono
-font-size = 16
+font-size = 13
 
 window-save-state = always
 
-theme = light:onehalflight,dark:onehalfdark
+theme = light:Github,dark:Github Dark
