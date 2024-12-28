@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
-require("harry")
+require("config.lazy")
 
 vim.opt.compatible = false
 vim.opt.autoread = true            -- automatically reload if file changes outside of vim
@@ -83,6 +84,9 @@ vim.keymap.set('n', 'n', 'nzzzv', { noremap = true })
 vim.keymap.set('n', 'N', 'Nzzzv', { noremap = true })
 vim.keymap.set('n', 'J', 'mzJ`z', { noremap = true })
 vim.keymap.set("x", "<leader>p", [["_dP]])
+
+-- Git mappings
+vim.keymap.set('n', '<Leader>gb', '<cmd>Git blame<cr>', { noremap = true })
 
 -- Lazygit
 vim.keymap.set('n', 'lg', ':tabnew term://lazygit<cr>', { noremap = true })
