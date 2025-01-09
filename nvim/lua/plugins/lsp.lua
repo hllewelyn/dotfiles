@@ -19,9 +19,14 @@ return {
 
       lspconfig.lua_ls.setup {}
       lspconfig.ruby_lsp.setup {
-        formatter = 'standard',
-        linters = { 'standard' },
+        init_options = {
+          formatter = 'standard',
+          linters = { 'standard' },
+        }
       }
     end,
+    vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { desc = "GOTO Definition LSP" }),
+    vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, { desc = "GOTO References LSP" }),
+    vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = "Format the buffer using the LSP" })
   }
 }
