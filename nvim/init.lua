@@ -97,6 +97,21 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 local group = vim.api.nvim_create_augroup("Misc", { clear = true })
 
+vim.cmd('syntax enable')
+vim.cmd('colorscheme catppuccin-latte')
+vim.cmd [[
+  " Change the color of the editor after 120 chars, except for the quickfix panel.
+  let &colorcolumn=join(range(121,999),",")
+  au FileType qf setlocal nonumber colorcolumn=
+
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+  " Shortcut commands to change the colorscheme - mainly used for pairing
+  command! DD execute "colorscheme catppuccin-frappe"
+  command! DL execute "colorscheme catppuccin-latte"
+]]
+
 vim.api.nvim_create_autocmd("BufWritePre", {
   desc = "Trim whitespace for buffer on write",
   callback = function()
