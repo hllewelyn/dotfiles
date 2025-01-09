@@ -3,54 +3,54 @@ vim.g.maplocalleader = " "
 
 require("config.lazy")
 
-vim.opt.compatible = false
-vim.opt.autoread = true            -- automatically reload if file changes outside of vim
-vim.opt.ruler = true		-- show the cursor position all the time
-vim.opt.number = true		-- show line numbers
-vim.opt.relativenumber = true      -- show relative line numbers
-vim.opt.numberwidth=5	-- width of the number gutter
-vim.opt.showmode = false		-- hide --INSERT-- in cmdline
-vim.opt.hlsearch = true			-- highlight search results
-vim.opt.incsearch = true                -- incremental search
-vim.opt.splitbelow = true 		-- open horizontal splits below
-vim.opt.splitright = true		-- open vertical splits to the right
-vim.opt.backspace = "indent,eol,start" -- backspace over everything in insert
-vim.opt.backup = false
-vim.opt.writebackup = false
-vim.opt.swapfile = false
-vim.opt.history = 200
-vim.opt.autoindent = true -- always have automatic indenting on
-vim.opt.shiftwidth = 2
-vim.opt.smarttab = true
-vim.opt.expandtab = true -- spaces instead of tabs
-vim.opt.scrolloff = 3 -- start scrolling 5 lines before edge of viewport
-vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
-vim.opt.mouse = 'a'
-vim.opt.foldlevel = 1
-vim.opt.foldmethod = 'syntax'
+vim.opt.compatible                 = false
+vim.opt.autoread                   = true -- automatically reload if file changes outside of vim
+vim.opt.ruler                      = true -- show the cursor position all the time
+vim.opt.number                     = true -- show line numbers
+vim.opt.relativenumber             = true -- show relative line numbers
+vim.opt.numberwidth                = 5 -- width of the number gutter
+vim.opt.showmode                   = false -- hide --INSERT-- in cmdline
+vim.opt.hlsearch                   = true -- highlight search results
+vim.opt.incsearch                  = true -- incremental search
+vim.opt.splitbelow                 = true -- open horizontal splits below
+vim.opt.splitright                 = true -- open vertical splits to the right
+vim.opt.backspace                  = "indent,eol,start" -- backspace over everything in insert
+vim.opt.backup                     = false
+vim.opt.writebackup                = false
+vim.opt.swapfile                   = false
+vim.opt.history                    = 200
+vim.opt.autoindent                 = true -- always have automatic indenting on
+vim.opt.shiftwidth                 = 2
+vim.opt.smarttab                   = true
+vim.opt.expandtab                  = true -- spaces instead of tabs
+vim.opt.scrolloff                  = 3 -- start scrolling 5 lines before edge of viewport
+vim.opt.clipboard                  = vim.opt.clipboard + 'unnamedplus'
+vim.opt.mouse                      = 'a'
+vim.opt.foldlevel                  = 1
+vim.opt.foldmethod                 = 'syntax'
 
-vim.opt.termguicolors = true
-vim.opt.textwidth=110
+vim.opt.termguicolors              = true
+vim.opt.textwidth                  = 110
 
 -- Netrw
-vim.g.netrw_winsize = 30
-vim.g.netrw_banner = 0
-vim.g.netrw_localcopydircmr = 'cp -r'
+vim.g.netrw_winsize                = 30
+vim.g.netrw_banner                 = 0
+vim.g.netrw_localcopydircmr        = 'cp -r'
 
 -- Ale
-vim.g.ale_sign_column_always = 1
-vim.g.ale_linters = {
+vim.g.ale_sign_column_always       = 1
+vim.g.ale_linters                  = {
   ruby = 'standardrb',
   javascript = 'eslint',
   ['javascript.jsx'] = 'eslint'
 }
-vim.g.ale_linters_explicit  = 1
-vim.g.ale_fixers = {
+vim.g.ale_linters_explicit         = 1
+vim.g.ale_fixers                   = {
   ruby = 'standardrb',
   javascript = 'prettier',
   ['javascript.jsx'] = 'prettier'
 }
-vim.g.ale_fix_on_save = 1
+vim.g.ale_fix_on_save              = 1
 
 -- Ruby Vim
 vim.g.ruby_indent_assignment_style = 'variable'
