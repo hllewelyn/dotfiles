@@ -1,8 +1,0 @@
--- require("harry.plugins")
--- require("harry.theme")
--- require("harry.telescope")
--- require("harry.completion")
--- require("harry.lsp")
--- require("harry.treesitter")
--- require("harry.git")
--- require("harry.ruby-lsp")
