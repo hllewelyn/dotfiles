@@ -23,6 +23,10 @@ export DIRENV_LOG_FORMAT=
 
 eval "$(direnv hook zsh)"
 
+if type yarn &>/dev/null; then
+  export PATH="$PATH:$(yarn global bin)"
+fi
+
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
