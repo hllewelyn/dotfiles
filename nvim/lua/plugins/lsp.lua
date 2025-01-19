@@ -24,6 +24,7 @@ return {
           linters = { 'standard' },
         }
       }
+      lspconfig.clangd.setup {}
     end,
     vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { desc = "GOTO Definition LSP" }),
     vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, { desc = "GOTO References LSP" }),
