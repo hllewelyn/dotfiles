@@ -95,7 +95,6 @@ vim.keymap.set('n', 'lg', ':tabnew term://lazygit<cr>', { noremap = true })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-local group = vim.api.nvim_create_augroup("Misc", { clear = true })
 
 vim.cmd('syntax enable')
 vim.cmd('colorscheme catppuccin-latte')
@@ -111,6 +110,8 @@ vim.cmd [[
   command! DD execute "colorscheme catppuccin-frappe"
   command! DL execute "colorscheme catppuccin-latte"
 ]]
+
+local group = vim.api.nvim_create_augroup("Misc", { clear = true })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
   desc = "Trim whitespace for buffer on write",
