@@ -8,6 +8,7 @@ alias cat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /de
 alias cleanmyroom="git branch | grep -v 'main' | xargs git branch -D"
 alias coach="tmuxinator start coach"
 alias csp="tmuxinator start csp"
+alias dotfiles="tmuxinator start dotfiles"
 alias g="git status -sb"
 alias gap="git add -pv"
 alias gcam="git commit -am"
