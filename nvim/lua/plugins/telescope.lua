@@ -40,6 +40,7 @@ return {
       { "<leader>fc", "<cmd>Telescope git_commits<cr>", desc = "Fuzzily find Git commits" },
       { "<leader>fr", function () require("telescope.builtin").resume() end, desc = 'Telescope resume previous' },
       { "<leader>fw", "<cmd>Telescope grep_string<cr>", desc = "Grep word under cursor", mode = { "n", "v" } },
+      { "<leader>fs", "<cmd>Telescope spell_suggest<cr>", desc = "Show spelling suggestions for word under cursor", mode = { "n", "v" } },
     },
     config = function ()
       require("telescope").setup({
