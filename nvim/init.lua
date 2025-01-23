@@ -4,16 +4,16 @@ vim.g.maplocalleader = " "
 require("config.lazy")
 
 vim.opt.compatible                 = false
-vim.opt.autoread                   = true -- automatically reload if file changes outside of vim
-vim.opt.ruler                      = true -- show the cursor position all the time
-vim.opt.number                     = true -- show line numbers
-vim.opt.relativenumber             = true -- show relative line numbers
-vim.opt.numberwidth                = 5 -- width of the number gutter
-vim.opt.showmode                   = false -- hide --INSERT-- in cmdline
-vim.opt.hlsearch                   = true -- highlight search results
-vim.opt.incsearch                  = true -- incremental search
-vim.opt.splitbelow                 = true -- open horizontal splits below
-vim.opt.splitright                 = true -- open vertical splits to the right
+vim.opt.autoread                   = true               -- automatically reload if file changes outside of vim
+vim.opt.ruler                      = true               -- show the cursor position all the time
+vim.opt.number                     = true               -- show line numbers
+vim.opt.relativenumber             = true               -- show relative line numbers
+vim.opt.numberwidth                = 5                  -- width of the number gutter
+vim.opt.showmode                   = false              -- hide --INSERT-- in cmdline
+vim.opt.hlsearch                   = true               -- highlight search results
+vim.opt.incsearch                  = true               -- incremental search
+vim.opt.splitbelow                 = true               -- open horizontal splits below
+vim.opt.splitright                 = true               -- open vertical splits to the right
 vim.opt.backspace                  = "indent,eol,start" -- backspace over everything in insert
 vim.opt.backup                     = false
 vim.opt.writebackup                = false
@@ -23,11 +23,11 @@ vim.opt.autoindent                 = true -- always have automatic indenting on
 vim.opt.shiftwidth                 = 2
 vim.opt.smarttab                   = true
 vim.opt.expandtab                  = true -- spaces instead of tabs
-vim.opt.scrolloff                  = 3 -- start scrolling 5 lines before edge of viewport
+vim.opt.scrolloff                  = 3    -- start scrolling 5 lines before edge of viewport
 vim.opt.clipboard                  = vim.opt.clipboard + 'unnamedplus'
 vim.opt.mouse                      = 'a'
 vim.opt.foldlevel                  = 1
-vim.opt.foldmethod                 = 'syntax'
+vim.opt.foldmethod                 = 'indent'
 
 vim.opt.termguicolors              = true
 vim.opt.textwidth                  = 110
@@ -95,21 +95,7 @@ vim.keymap.set('n', 'lg', ':tabnew term://lazygit<cr>', { noremap = true })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-
 vim.cmd('syntax enable')
-vim.cmd('colorscheme catppuccin-latte')
-vim.cmd [[
-  " Change the color of the editor after 120 chars, except for the quickfix panel.
-  let &colorcolumn=join(range(121,999),",")
-  au FileType qf setlocal nonumber colorcolumn=
-
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
-  " Shortcut commands to change the colorscheme - mainly used for pairing
-  command! DD execute "colorscheme catppuccin-frappe"
-  command! DL execute "colorscheme catppuccin-latte"
-]]
 
 local group = vim.api.nvim_create_augroup("Misc", { clear = true })
 
