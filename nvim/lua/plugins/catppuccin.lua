@@ -43,6 +43,7 @@ return {
         callback = function()
           local colors = require("catppuccin.palettes").get_palette()
           vim.api.nvim_set_hl(0, "ColorColumn", { bg = colors.mantle })
+          vim.api.nvim_set_hl(0, "Folded", { bg = colors.crust, fg = colors.green })
         end,
       })
 
