@@ -26,7 +26,7 @@ return {
     config = function()
       require("auto-dark-mode").init()
 
-      vim.cmd('colorscheme catppuccin-latte')
+      vim.cmd.colorscheme("catppuccin-latte")
 
       vim.api.nvim_create_user_command('DD', function()
         vim.cmd.colorscheme("catppuccin-frappe")
