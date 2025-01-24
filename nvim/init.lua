@@ -86,6 +86,7 @@ vim.keymap.set('n', 'n', 'nzzzv', { noremap = true })
 vim.keymap.set('n', 'N', 'Nzzzv', { noremap = true })
 vim.keymap.set('n', 'J', 'mzJ`z', { noremap = true })
 vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set('n', 'zo', 'za', { remap = true, desc = "Toggle fold" })
 
 -- Git mappings
 vim.keymap.set('n', '<Leader>gb', '<cmd>Git blame<cr>', { noremap = true })
