@@ -40,19 +40,19 @@ vim.g.netrw_banner                 = 0
 vim.g.netrw_localcopydircmr        = 'cp -r'
 
 -- Ale
-vim.g.ale_sign_column_always       = 1
-vim.g.ale_linters                  = {
-  ruby = 'standardrb',
-  javascript = 'eslint',
-  ['javascript.jsx'] = 'eslint'
-}
-vim.g.ale_linters_explicit         = 1
-vim.g.ale_fixers                   = {
-  ruby = 'standardrb',
-  javascript = 'prettier',
-  ['javascript.jsx'] = 'prettier'
-}
-vim.g.ale_fix_on_save              = 1
+-- vim.g.ale_sign_column_always       = 1
+-- vim.g.ale_linters                  = {
+--   ruby = 'standardrb',
+--   javascript = 'eslint',
+--   ['javascript.jsx'] = 'eslint'
+-- }
+-- vim.g.ale_linters_explicit         = 1
+-- vim.g.ale_fixers                   = {
+--   ruby = 'standardrb',
+--   javascript = 'prettier',
+--   ['javascript.jsx'] = 'prettier'
+-- }
+-- vim.g.ale_fix_on_save              = 1
 
 vim.keymap.set('', '<Leader>so', ':so ~/.config/nvim/init.lua<cr>') -- Reload nvim config
 
