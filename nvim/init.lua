@@ -54,9 +54,6 @@ vim.g.ale_fixers                   = {
 }
 vim.g.ale_fix_on_save              = 1
 
--- Ruby Vim
-vim.g.ruby_indent_assignment_style = 'variable'
-
 vim.keymap.set('', '<Leader>so', ':so ~/.config/nvim/init.lua<cr>') -- Reload nvim config
 
 -- Tab mappings
