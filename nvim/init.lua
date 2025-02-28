@@ -80,6 +80,9 @@ vim.keymap.set('n', 'lg', ':tabnew term://lazygit<cr>', { noremap = true })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- Insert date in yyyy-mm-dd format
+vim.keymap.set("n", "<Leader>d", ':r !date "+\\%Y-\\%m-\\%d"<CR>', { noremap = true, silent = true })
+
 vim.cmd('syntax enable')
 
 local group = vim.api.nvim_create_augroup("Misc", { clear = true })
