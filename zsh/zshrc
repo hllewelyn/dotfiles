@@ -3,6 +3,9 @@ source ~/dotfiles/env
 export GOPATH=$HOME/go
 export GOPRIVATE="github.com/hllewelyn/*"
 
+export ASDF_DATA_DIR="$HOME/.asdf"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
+
 if type nvim &> /dev/null; then
   alias v="vim"
   alias vim="nvim"
@@ -131,5 +134,3 @@ po() {
 # . $HOME/.asdf/asdf.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
