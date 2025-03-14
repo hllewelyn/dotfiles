@@ -85,6 +85,8 @@ vim.keymap.set("n", "<Leader>d", ':r !date "+\\%Y-\\%m-\\%d"<CR>', { noremap = t
 
 vim.cmd('syntax enable')
 
+vim.cmd.packadd('cfilter')
+
 local group = vim.api.nvim_create_augroup("Misc", { clear = true })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
