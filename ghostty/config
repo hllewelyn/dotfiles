@@ -1,10 +1,6 @@
-fullscreen = true
-
 font-family = BerkeleyMono Nerd Font Mono
 font-size = 16
 
 window-save-state = always
 
 theme = light:catppuccin-latte,dark:catppuccin-frappe
-
-macos-icon = chalkboard
