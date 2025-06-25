@@ -80,8 +80,14 @@ vim.keymap.set('n', 'lg', ':tabnew term://lazygit<cr>', { noremap = true })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- Insert date in yyyy-mm-dd format
-vim.keymap.set("n", "<Leader>d", ':r !date "+\\%Y-\\%m-\\%d"<CR>', { noremap = true, silent = true })
+-- Insert date with start of list in yyyy-mm-dd format
+vim.keymap.set("n", "<Leader>d", function()
+  local date = os.date("%Y-%m-%d")
+  local line = "## " .. date
+  vim.api.nvim_put({line, "- ", ""}, "l", true, true)
+  vim.cmd("normal! 2k")
+  vim.cmd("startinsert!")
+end, { noremap = true, silent = true })
 
 vim.cmd('syntax enable')
 
@@ -97,4 +103,12 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.fn.winrestview(save)
   end,
   group = group
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.foldmethod = 'expr'
+    vim.opt_local.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+  end,
 })
