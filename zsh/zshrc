@@ -5,6 +5,8 @@ export GOPRIVATE="github.com/hllewelyn/*"
 
 export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
+
 if type nvim &> /dev/null; then
   alias v="vim"
   alias vim="nvim"
@@ -133,3 +135,4 @@ po() {
 # . $HOME/.asdf/asdf.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(mise activate zsh)"
