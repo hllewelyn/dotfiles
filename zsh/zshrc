@@ -22,11 +22,6 @@ fi
 export RUBY_YJIT_ENABLE=1
 export DISABLE_SPRING=true
 
-# Silence direnv
-export DIRENV_LOG_FORMAT=
-
-eval "$(direnv hook zsh)"
-
 if type yarn &>/dev/null; then
   export PATH="$PATH:$(yarn global bin)"
 fi
