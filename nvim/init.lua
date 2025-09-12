@@ -3,8 +3,6 @@ vim.g.maplocalleader = " "
 
 require("config.lazy")
 
-vim.opt.background = "dark"
-
 vim.opt.compatible                 = false
 vim.opt.autoread                   = true               -- automatically reload if file changes outside of vim
 vim.opt.ruler                      = true               -- show the cursor position all the time

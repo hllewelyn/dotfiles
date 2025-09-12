@@ -3,30 +3,19 @@ return {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
-    dependencies = {
-      {
-        "f-person/auto-dark-mode.nvim",
-        opts = {
-          update_interval = 1000,
-          set_dark_mode = function()
-            vim.api.nvim_set_option_value("background", "dark", {})
-            vim.cmd('colorscheme catppuccin-frappe')
-          end,
-          set_light_mode = function()
-            vim.api.nvim_set_option_value("background", "light", {})
-            vim.cmd("colorscheme catppuccin-latte")
-          end,
-        },
-      }
-    },
-    background = {
-      light = "latte",
-      dark = "frappe"
-    },
     config = function()
-      require("auto-dark-mode").init()
+      require'catppuccin'.setup({
+        background = {
+          light = "latte",
+          dark = "frappe"
+        },
+        term_colors = true,
+        integrations = {
+          telescope = true,
+        },
+      })
 
-      vim.cmd.colorscheme("catppuccin-latte")
+      vim.cmd.colorscheme("catppuccin")
 
       vim.api.nvim_create_user_command('DD', function()
         vim.cmd.colorscheme("catppuccin-frappe")
@@ -55,6 +44,6 @@ return {
           vim.opt_local.number = false
         end,
       })
-    end
+    end,
   }
 }
