@@ -1,3 +1,8 @@
+vim.lsp.config("herb_ls", {
+  filetypes = { "html", "eruby" },
+})
+vim.lsp.enable("herb_ls")
+
 return {
   {
     "neovim/nvim-lspconfig",
