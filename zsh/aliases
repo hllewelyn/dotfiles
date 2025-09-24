@@ -7,8 +7,8 @@ alias c="clear"
 alias cat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo OneHalfDark || echo OneHalfLight)"
 alias cleanmyroom="git branch | grep -v 'main' | xargs git branch -D"
 alias coach="tmuxinator start coach"
-alias csp="tmuxinator start csp"
-alias dotfiles="tmuxinator start dotfiles"
+alias csp="tmuxinator start csp --suppress-tmux-version-warning=SUPPRESS-TMUX-VERSION-WARNING"
+alias dotfiles="tmuxinator start dotfiles --suppress-tmux-version-warning=SUPPRESS-TMUX-VERSION-WARNING"
 alias g="git status -sb"
 alias gap="git add -pv"
 alias gcam="git commit -am"
@@ -31,8 +31,8 @@ alias mkdir="mkdir -p"
 alias monkey="tmuxinator start monkey"
 alias nas="ssh alexandria"
 alias path='echo $PATH | tr -s ":" "\n"'
-alias personal='tmuxinator start harrydev'
-alias podia='tmuxinator start podia'
+alias personal='tmuxinator start harrydev --suppress-tmux-version-warning=SUPPRESS-TMUX-VERSION-WARNING'
+alias podia='tmuxinator start podia --suppress-tmux-version-warning=SUPPRESS-TMUX-VERSION-WARNING'
 alias projects='cd ~/Documents/Projects/'
 alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy | echo 'Public key copied to clipboard!'"
 alias rc="bundle exec rails c"
