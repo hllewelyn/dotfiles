@@ -110,3 +110,13 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
   end,
 })
+
+vim.diagnostic.config({
+  float = {
+    border = "single",
+    source = true,
+    -- Additional spacing options
+    max_width = 80,
+    max_height = 20,
+  }
+})
