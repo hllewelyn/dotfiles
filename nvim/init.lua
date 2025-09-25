@@ -118,5 +118,7 @@ vim.diagnostic.config({
     -- Additional spacing options
     max_width = 80,
     max_height = 20,
-  }
+  },
+  virtual_text = false,
+  virtual_lines = { current_line = true }
 })
