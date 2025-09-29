@@ -122,3 +122,17 @@ vim.diagnostic.config({
   virtual_text = false,
   virtual_lines = { current_line = true }
 })
+
+local diagnostics = {
+  "DiagnosticUnderlineError",
+  "DiagnosticUnderlineWarn",
+  "DiagnosticUnderlineInfo",
+  "DiagnosticUnderlineHint"
+}
+
+for _, diagnostic in ipairs(diagnostics) do
+  local hl = vim.api.nvim_get_hl(0, { name = diagnostic })
+  hl.undercurl = true
+  hl.underline = nil  -- remove straight underline
+  vim.api.nvim_set_hl(0, diagnostic, hl)
+end
