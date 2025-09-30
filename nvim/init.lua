@@ -4,6 +4,7 @@ vim.g.maplocalleader = " "
 require("config.lazy")
 require("config.options")
 require("config.keymaps")
+require("config.lsp")
 
 vim.cmd('syntax enable')
 
@@ -28,29 +29,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
   end,
 })
-
-vim.diagnostic.config({
-  float = {
-    border = "single",
-    source = true,
-    -- Additional spacing options
-    max_width = 80,
-    max_height = 20,
-  },
-  virtual_text = false,
-  virtual_lines = { current_line = true }
-})
-
-local diagnostics = {
-  "DiagnosticUnderlineError",
-  "DiagnosticUnderlineWarn",
-  "DiagnosticUnderlineInfo",
-  "DiagnosticUnderlineHint"
-}
-
-for _, diagnostic in ipairs(diagnostics) do
-  local hl = vim.api.nvim_get_hl(0, { name = diagnostic })
-  hl.undercurl = true
-  hl.underline = nil  -- remove straight underline
-  vim.api.nvim_set_hl(0, diagnostic, hl)
-end
