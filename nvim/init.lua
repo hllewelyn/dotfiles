@@ -29,3 +29,5 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
   end,
 })
+
+vim.api.nvim_create_autocmd("VimResized", { command = "wincmd =" })
