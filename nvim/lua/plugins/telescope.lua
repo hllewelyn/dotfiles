@@ -26,9 +26,10 @@ return {
     },
     keys = {
       { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Fuzzily find files" },
-      { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Fuzzily grep" },
+      { "<leader>fg", "<cmd>Telescope live_grep<cr>",  desc = "Fuzzily grep" },
       {
-        "<leader>fb", function()
+        "<leader>fb",
+        function()
           require("telescope.builtin").buffers({
             -- Sorts all buffers by most recently used
             sort_mru = true
@@ -36,24 +37,24 @@ return {
         end,
         desc = 'Telescope buffers'
       },
-      { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Fuzzily find Neovim help topics" },
-      { "<leader>fc", "<cmd>Telescope git_commits<cr>", desc = "Fuzzily find Git commits" },
-      { "<leader>fr", function () require("telescope.builtin").resume() end, desc = 'Telescope resume previous' },
-      { "<leader>fw", "<cmd>Telescope grep_string<cr>", desc = "Grep word under cursor", mode = { "n", "v" } },
-      { "<leader>fs", "<cmd>Telescope spell_suggest<cr>", desc = "Show spelling suggestions for word under cursor", mode = { "n", "v" } },
-      { "<leader>fd", "<cmd>Telescope diagnostics<cr>", desc = "Show diagnostics in open buffers", mode = { "n", "v" } },
+      { "<leader>fh", "<cmd>Telescope help_tags<cr>",                        desc = "Fuzzily find Neovim help topics" },
+      { "<leader>fc", "<cmd>Telescope git_commits<cr>",                      desc = "Fuzzily find Git commits" },
+      { "<leader>fr", function() require("telescope.builtin").resume() end,  desc = 'Telescope resume previous' },
+      { "<leader>fw", "<cmd>Telescope grep_string<cr>",                      desc = "Grep word under cursor",                          mode = { "n", "v" } },
+      { "<leader>fs", "<cmd>Telescope spell_suggest<cr>",                    desc = "Show spelling suggestions for word under cursor", mode = { "n", "v" } },
+      { "<leader>fd", "<cmd>Telescope diagnostics<cr>",                      desc = "Show diagnostics in open buffers",                mode = { "n", "v" } },
     },
-    config = function ()
+    config = function()
       require("telescope").setup({
         defaults = {
         },
         extensions = {
           fzf = {}
-        }
+        },
       })
 
       -- Load telescope-fzf-native.nvim extension
       require('telescope').load_extension('fzf')
     end
-  }
+  },
 }
