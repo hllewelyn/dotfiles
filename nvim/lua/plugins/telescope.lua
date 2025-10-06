@@ -45,11 +45,25 @@ return {
       { "<leader>fd", "<cmd>Telescope diagnostics<cr>",                      desc = "Show diagnostics in open buffers",                mode = { "n", "v" } },
     },
     config = function()
+      local actions = require("telescope.actions")
+
       require("telescope").setup({
         defaults = {
         },
         extensions = {
           fzf = {}
+        },
+        pickers = {
+          help_tags = {
+            mappings = {
+              i = {
+                ["<CR>"] = actions.select_vertical,
+              },
+              n = {
+                ["<CR>"] = actions.select_vertical,
+              },
+            },
+          },
         },
       })
 
