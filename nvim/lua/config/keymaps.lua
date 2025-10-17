@@ -2,6 +2,8 @@ local keymap = vim.keymap
 
 keymap.set('', '<Leader>so', ':so ~/.config/nvim/init.lua<cr>') -- Reload nvim config
 
+keymap.set('n', 'n', 'nzz')
+
 -- Tab mappings
 keymap.set('', '<Leader>tt', ':tabnew<cr>')
 keymap.set('', '<Leader>tc', ':tabclose<cr>')
