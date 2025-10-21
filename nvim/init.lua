@@ -3,6 +3,7 @@ vim.g.maplocalleader = " "
 
 require("config.lazy")
 require("config.options")
+require("config.folds")
 require("config.keymaps")
 require("config.lsp")
 

@@ -27,8 +27,6 @@ opt.ignorecase              = true
 opt.smartcase               = true
 opt.clipboard               = opt.clipboard + 'unnamedplus'
 opt.mouse                   = 'a'
-opt.foldlevel               = 1
-opt.foldmethod              = 'indent'
 
 opt.termguicolors           = true
 opt.textwidth               = 110
