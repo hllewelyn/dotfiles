@@ -6,7 +6,7 @@ vim.keymap.set('n', 'dd', function()
   table.remove(items, line)
   vim.fn.setqflist(items, 'r')
 
-  -- close quickfix on last item remove
+  -- Close quickfix on last item remove
   if #items == 0 then
     vim.cmd.cclose()
   else
@@ -14,4 +14,7 @@ vim.keymap.set('n', 'dd', function()
     local new_line = math.min(line, #items)
     vim.api.nvim_win_set_cursor(0, { new_line, cursor[2] })
   end
+
+  -- Make repeatable with vim-repeat
+  vim.fn['repeat#set'](vim.api.nvim_replace_termcodes('dd', true, true, true))
 end, { buffer = 0, silent = true, desc = 'Remove item under cursor' })
