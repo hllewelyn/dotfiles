@@ -1,6 +1,5 @@
 local opt                   = vim.opt
 
-opt.compatible              = false
 opt.autoread                = true               -- automatically reload if file changes outside of vim
 opt.ruler                   = true               -- show the cursor position all the time
 opt.number                  = true               -- show line numbers
