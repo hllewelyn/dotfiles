@@ -1,1 +1,6 @@
-return { { "tpope/vim-rails" } }
+return {
+  {
+    "tpope/vim-rails",
+    ft = { "ruby", "eruby" },
+  }
+}
