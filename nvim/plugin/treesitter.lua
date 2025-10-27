@@ -1,5 +1,5 @@
 vim.pack.add({
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter", name = "treesitter" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", name = "treesitter", version = "master" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" }
 })
 
