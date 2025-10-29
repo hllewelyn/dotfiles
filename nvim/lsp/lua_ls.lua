@@ -1,5 +1,5 @@
 vim.lsp.config('lua_ls', {
-  settings {
+  settings = {
     Lua = {
       diagnostics = {
         disable = { "missing-fields" },
