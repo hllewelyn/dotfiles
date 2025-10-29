@@ -1,1 +1,1 @@
-vim.pack.add({ "https://github.com/tpope/vim-eunuch" })
+vim.pack.add({ "https://github.com/tpope/vim-eunuch" }, { load = true })

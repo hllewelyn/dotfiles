@@ -1,1 +1,1 @@
-vim.pack.add({ "https://github.com/vim-test/vim-test" })
+vim.pack.add({ "https://github.com/vim-test/vim-test" }, { load = true })
