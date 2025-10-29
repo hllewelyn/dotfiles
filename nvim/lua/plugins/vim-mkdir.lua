@@ -1,1 +1,0 @@
-return {{ "pbrisbin/vim-mkdir" }}
