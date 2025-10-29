@@ -1,7 +1,7 @@
 vim.pack.add({
   "https://github.com/nvim-telescope/telescope.nvim" ,
   "https://github.com/nvim-lua/plenary.nvim"
-}, { confirm = false })
+}, { confirm = false, load = true })
 
 local telescope = require("telescope")
 local actions = require("telescope.actions")
