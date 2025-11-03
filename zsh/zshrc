@@ -131,3 +131,6 @@ po() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(mise activate zsh)"
+
+# amp
+export PATH="$HOME/.local/bin:$PATH"
