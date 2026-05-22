@@ -1,0 +1,33 @@
+#!/bin/bash
+set -euo pipefail
+
+OWNER="${1:-Podia}"
+LIST="Podia"
+TODAY=$(date +%Y-%m-%d)
+
+existing=$(remindctl show open --list "$LIST" --json | jq -r '.[].title')
+
+gh search prs \
+  --owner "$OWNER" \
+  --review-requested @me \
+  --state open \
+  --json url,title,repository \
+  | jq -c '.[]' \
+  | while read -r pr; do
+      url=$(echo "$pr" | jq -r '.url')
+      title=$(echo "$pr" | jq -r '.title')
+      reminder_title="Review PR: $title"
+
+      if echo "$existing" | grep -Fxq "$reminder_title"; then
+        echo "Skip (exists): $reminder_title"
+        continue
+      fi
+
+      remindctl add \
+        --list "$LIST" \
+        --priority high \
+        --due "$TODAY" \
+        --title "$reminder_title" \
+        --notes "$url"
+      echo "Created: $reminder_title"
+    done
