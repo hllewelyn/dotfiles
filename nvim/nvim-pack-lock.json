@@ -9,6 +9,10 @@
       "src": "https://github.com/saghen/blink.cmp",
       "version": "1.7.0 - 1.8.0"
     },
+    "catppuccin": {
+      "rev": "8c4125e3c746976ba025dc5d908fa22c6aa09486",
+      "src": "ssh://git@github.com/catppuccin/nvim"
+    },
     "friendly-snippets": {
       "rev": "572f566",
       "src": "https://github.com/rafamadriz/friendly-snippets"
